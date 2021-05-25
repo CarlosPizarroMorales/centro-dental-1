@@ -1,3 +1,10 @@
-w-75 {
-    background-color: var(--bs-primary);
+.navbar-brand {
+    font-style: italic;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+th {
+    text-align: center;
 }

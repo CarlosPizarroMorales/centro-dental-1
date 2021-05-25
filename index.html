@@ -12,17 +12,17 @@
 
 <body class="bg-dark">
     <!-- Esto de abajo deberia ser un navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar mx-auto w-75 navbar-dark bg-primary">
         <div class="container w-75">
-            <a class="navbar-brand" href="#">Centro Medico Ñuñoa</a>
+            <a class="navbar-brand fw-bold" href="#">Centro Medico Ñuñoa</a>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   Especialidad
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Dental</a></li>
-                    <li><a class="dropdown-item" href="#">Radiologia</a></li>
-                    <li><a class="dropdown-item" href="#">Traumatologia</a></li>
+                    <li id="dental"><a class="dropdown-item" href="#">Dental</a></li>
+                    <li id="radiologia"><a class="dropdown-item" href="#">Radiologia</a></li>
+                    <li id="traumatologia"><a class="dropdown-item" href="#">Traumatologia</a></li>
                 </ul>
             </div>
 
@@ -31,13 +31,14 @@
 
     <div class="container w-75">
         <!-- titulo de la especialidad -->
-        <h1 class="text-uppercase text-white text-center fs-2">especialidad</h1>
+        <h1 id="especialidad" class="text-uppercase text-white text-center fs-2 mt-4 fw-normal">especialidad</h1>
         <!-- aca deberia ir un parrafo que muestre la info primer/ultima atencion -->
-        <p class="text-white text-center fs-6">Primera atencion - Ultima atencion:</p>
+        <p id="first-last" class="text-white text-center fs-6 mb-0">Primera atencion: Juanito - FONASA | Ultima atencion: Matias - Isapre</p>
         <!-- la tabla misma -->
         <table class="table table-bordered table-light table-hover border-primary">
             <thead class="text-center">
                 <tr>
+                    <th class="bg-primary text-light fw-light" scope="col">Reg</th>
                     <th class="bg-primary text-light fw-light" scope="col">Hora</th>
                     <th class="bg-primary text-light fw-light" scope="col">Especialista</th>
                     <th class="bg-primary text-light fw-light" scope="col">Paciente</th>
@@ -46,61 +47,61 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">11:30</th>
+                <tr id="fila-1">
+                    <th scope="row">1</th>
+                    <td>11:30</td>
                     <td>Juanito</td>
                     <td>Maria</td>
                     <td>15455455-1</td>
                     <td>FONASA</td>
                 </tr>
-                <tr>
-                    <th scope="row">11:30</th>
+                <tr id="fila-2">
+                    <th scope="row">2</th>
+                    <td>11:30</td>
                     <td>Juanito</td>
                     <td>Maria</td>
                     <td>15455455-1</td>
                     <td>FONASA</td>
                 </tr>
-                <tr>
-                    <th scope="row">11:30</th>
+                <tr id="fila-3">
+                    <th scope="row">3</th>
+                    <td>11:30</td>
                     <td>Juanito</td>
                     <td>Maria</td>
                     <td>15455455-1</td>
                     <td>FONASA</td>
                 </tr>
-                <tr>
-                    <th scope="row">11:30</th>
+                <tr id="fila-4">
+                    <th scope="row">4</th>
+                    <td>11:30</td>
                     <td>Juanito</td>
                     <td>Maria</td>
                     <td>15455455-1</td>
                     <td>FONASA</td>
                 </tr>
-                <tr>
-                    <th scope="row">11:30</th>
+                <tr id="fila-5">
+                    <th scope="row">5</th>
+                    <td>11:30</td>
+                    <td>Juanito</td>
+                    <td>Maria</td>
+                    <td>15455455-1</td>
+                    <td>FONASA</td>
+                </tr>6
+                <tr id="fila-6">
+                    <th scope="row">6</th>
+                    <td>11:30</td>
                     <td>Juanito</td>
                     <td>Maria</td>
                     <td>15455455-1</td>
                     <td>FONASA</td>
                 </tr>
-                <tr>
-                    <th scope="row">11:30</th>
+                <tr id="fila-7">
+                    <th scope="row">7</th>
+                    <td>11:30</td>
                     <td>Juanito</td>
                     <td>Maria</td>
                     <td>15455455-1</td>
                     <td>FONASA</td>
-                </tr>
-                <tr>
-                    <th scope="row">11:30</th>
-                    <td>Juanito</td>
-                    <td>Maria</td>
-                    <td>15455455-1</td>
-                    <td>FONASA</td>
-                </tr>
-                <tr>
-                    <th scope="row">12:00</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                 </tr>
             </tbody>
         </table>
