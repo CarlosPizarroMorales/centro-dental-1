@@ -15,26 +15,33 @@
     <nav class="navbar mx-auto w-75 navbar-dark bg-primary">
         <div class="container w-75">
             <a class="navbar-brand fw-bold" href="#">Centro Medico Ñuñoa</a>
-            <div class="dropdown">
+            <!-- No pude manejar adecuadamente este dropdown con eventListeners. Lo dejo para despues. -->
+            <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   Especialidad
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li id="dental"><a class="dropdown-item" href="#">Dental</a></li>
-                    <li id="radiologia"><a class="dropdown-item" href="#">Radiologia</a></li>
-                    <li id="traumatologia"><a class="dropdown-item" href="#">Traumatologia</a></li>
+                <ul id="seleccionar" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li id="dental" value="dental"><a class="dropdown-item" href="#">Dental</a></li>
+                    <li id="radiologia" value="radiologia"><a class="dropdown-item" href="#">Radiologia</a></li>
+                    <li id="traumatologia" value="traumatologia"><a class="dropdown-item" href="#">Traumatologia</a></li>
                 </ul>
-            </div>
-
+            </div> -->
+            <label for="vacio" class="ms-auto text-light">Seleccione especialidad: </label>
+            <select name="vacio" id="selecciona" class="ms-2">
+                <option value="dental" selected="selected">Dental</option>
+                <option value="radiologia">Radiologia</option>
+                <option value="traumatologia">Traumatologia</option>
+            </select>
         </div>
     </nav>
 
     <div class="container w-75">
         <!-- titulo de la especialidad -->
-        <h1 id="especialidad" class="text-uppercase text-white text-center fs-2 mt-4 fw-normal">especialidad</h1>
+        <h1 id="especialidad" class="text-uppercase text-white text-center fs-1 mt-4 fw-normal mb-4">especialidad</h1>
         <!-- aca deberia ir un parrafo que muestre la info primer/ultima atencion -->
-        <p id="first-last" class="text-white text-center fs-6 mb-0">Primera atencion: Juanito - FONASA | Ultima atencion: Matias - Isapre</p>
+        <p id="first-last" class="text-white text-center fs-6 mb-0 pb-0">Primera atencion: Juanito - FONASA | Ultima atencion: Matias - Isapre</p>
         <!-- la tabla misma -->
+        <!-- Aca en este espacio hay un texto plano de valor 6 con id #texto. Que es? y de donde sale? -->
         <table class="table table-bordered table-light table-hover border-primary">
             <thead class="text-center">
                 <tr>
@@ -106,6 +113,9 @@
             </tbody>
         </table>
     </div>
+    <footer class="container w-75 fixed-bottom">
+        <p class="text-white text-center fw-lighter m-0 p-2">Copirrai 2021 - Todos los derechos (e izquierdos) reservados.</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 " crossorigin="anonymous "></script>
     <script src="./assets/js/main.js "></script>
 </body>

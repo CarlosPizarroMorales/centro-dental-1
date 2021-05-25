@@ -44,7 +44,7 @@ let radiologia = [
     {
         hora: '11:00',
         especialista: 'Ignacio Schulz',
-        paciente: 'Francisa Rojas',
+        paciente: 'Francisca Rojas',
         rut: '9878782-1',
         prevision: 'FONASA'
     }, {
@@ -121,30 +121,37 @@ let traumatologia = [
     }
 ];
 
-/* La funcion trabaja correctamente,
- * solo falta conectar un listener en el elemento li o a,
- * para completar los campos al clickear en el elemento.
- */
+modificaTabla(dental) // Carga datos por defecto para no dejar tabla vacia.
 
-let vistaActual = traumatologia;
-document.querySelector('#especialidad').textContent = vistaActual[0];
-document.querySelector('#first-last').textContent = `Primera atención: ${vistaActual[1].paciente} - ${vistaActual[1].prevision}  |  Última atención: ${vistaActual[vistaActual.length - 1].paciente}  ${vistaActual[vistaActual.length - 1].prevision}`;
-for (j = 1; j < 8; j++) {
-    if (j > vistaActual.length - 1) {
-        document.querySelector(`#fila-${j}`).innerHTML = `
+//OJO!! arrow function no da el this. que necesito aca. Ver README.md
+let selecciona = document.getElementById('selecciona');
+selecciona.addEventListener('change', function() {
+    console.log('value actual: ', this.value);
+    this.value === 'dental' ? modificaTabla(dental) :
+        this.value === 'radiologia' ? modificaTabla(radiologia) :
+        modificaTabla(traumatologia);
+});
+
+function modificaTabla(eleccion) {
+    document.querySelector('#especialidad').textContent = eleccion[0];
+    document.querySelector('#first-last').textContent = `Primera atención: ${eleccion[1].paciente} - ${eleccion[1].prevision}  |  Última atención: ${eleccion[eleccion.length - 1].paciente}  ${eleccion[eleccion.length - 1].prevision}`;
+    for (j = 1; j < 8; j++) {
+        if (j > eleccion.length - 1) { // llena filas vacias para mantener vista constante.
+            document.querySelector(`#fila-${j}`).innerHTML = ` 
         <th scope="row">${j}</th>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>`;
-    } else {
-        document.querySelector(`#fila-${j}`).innerHTML = `
+        } else { // llena fila
+            document.querySelector(`#fila-${j}`).innerHTML = `
         <th scope="row">${j}</th>
-        <td>${vistaActual[j].hora}</td>
-        <td>${vistaActual[j].especialista}</td>
-        <td>${vistaActual[j].paciente}</td>
-        <td>${vistaActual[j].rut}</td>
-        <td>${vistaActual[j].prevision}</td>`;
+        <td>${eleccion[j].hora}</td>
+        <td>${eleccion[j].especialista}</td>
+        <td>${eleccion[j].paciente}</td>
+        <td>${eleccion[j].rut}</td>
+        <td>${eleccion[j].prevision}</td>`;
+        }
     }
 }
